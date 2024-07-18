@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: aspnet-mssql-infrastructure-default
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/aspnet-mssql-infrastructure-default: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/aspnet-mssql-infrastructure-default: "true"
+
+      
